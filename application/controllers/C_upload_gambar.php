@@ -26,7 +26,7 @@ public function do_upload()
 
       if ($query) {
         echo 'berhasil diupload';
-        redirect('C_upload_gambar');
+        redirect('C_upload');
       }else {
         echo 'gagal upload';
       }
@@ -34,14 +34,14 @@ public function do_upload()
 
 }
 
-public function delete($id)
+public function hapus($id_upload)
 {
-    $_id = $this->db->get_where('upload',['id' => $id])->row();
-    $query = $this->db->delete('upload', ['id' => $id]);
+    $_id = $this->db->get_where('upload',['id_upload' => $id_upload])->row();
+    $query = $this->db->delete('upload', ['id_upload' => $id_upload]);
     if ($query) {
-      unlink('gambar/'.$_id->image);
+      unlink('gambar/'.$_id->nama_file);
     }
-    redirect('C_upload_gambar');
+    redirect('C_upload');
 }
 
 // public function index()

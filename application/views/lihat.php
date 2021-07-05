@@ -22,8 +22,8 @@
           <td>Pilihan</td>
         </tr>
         <?php
-        foreach ($result as $row);
         $no=1;
+        foreach ($result as $row){;
         ?>
 
         <tr>
@@ -35,9 +35,11 @@
           <td><?= $row->keterangan ?></td>
           <td>
             <a href="<?= site_url('C_upload_gambar/edit/').$row->id_upload ?>" class="btn btn-info">Edit</a>
-            <a href="<?= site_url('C_upload_gambar/hapus/').$row->id_upload ?>" class="btn btn-danger">Hapus</a>
+            <a href="<?= site_url('C_upload_gambar/hapus/').$row->id_upload ?>"  class="btn btn-danger"
+              onclick="return confirm('Anda yakin Hapus data Data <?= $row->id_upload ?> ?')">Hapus</a>
           </td>
         </tr>
+      <?php } ?>
       </table>
 
     </div>
