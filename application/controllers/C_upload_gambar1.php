@@ -8,8 +8,7 @@ public function do_upload()
     $config['upload_path'] = './gambar/';
     $config['allowed_types'] = 'gif|jpg|png';
     $config['max_size'] = 1000;
-    $config['encrypt_name']	= TRUE;
-
+    $config['encrypt_name']			= TRUE;
     // $config['max_width'] = 0;
     // $config['max_height'] = 0;
 
